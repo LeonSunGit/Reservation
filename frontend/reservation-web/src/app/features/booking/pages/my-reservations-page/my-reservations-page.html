@@ -1,0 +1,13 @@
+@if (reservation.reservatrionList().length===0) {
+    <p>No Reservation</p>
+}
+@else{
+@for (slot of reservation.reservatrionList(); track slot) {
+  <div>
+    <span>{{ slot.startTime }} - {{ slot.endTime }}</span>
+    <button (click)="reservation.cancelBooking(slot.id)">Cancel</button>
+  </div>
+}
+
+}
+
