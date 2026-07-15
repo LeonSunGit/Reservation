@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,input,output } from '@angular/core';
+import { formatDateOnly } from '../../../../shared/utils/date.util';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-date-selector',
@@ -6,4 +8,13 @@ import { Component } from '@angular/core';
   templateUrl: './date-selector.html',
   styleUrl: './date-selector.css',
 })
-export class DateSelector {}
+export class DateSelector {
+  availableDates=input<Date[]>([]);
+  selectedDate=output<Date>();
+
+  formateDate= formatDateOnly;
+  selectDate(date:Date){
+    this.selectedDate.emit(date);
+    
+  }
+}

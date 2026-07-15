@@ -1,8 +1,8 @@
 <h1>Book a Slot</h1>
 <p>Select a day and available time slot</p>
 
-<app-date-selector></app-date-selector>
+<app-date-selector [availableDates] ="reservationService.getAvailableDate()" (selectedDate)="onDateSelected($event)"></app-date-selector>
 
-<app-time-slot-grid (selectedSlot)="onSlotSelected($event)" [reservations]="reservationService.reservatrionList()"></app-time-slot-grid>
+<app-time-slot-grid (selectedSlot)="onSlotSelected($event)" [reservations]="reservationService.getReservationsByDate(selectedDate)"></app-time-slot-grid>
 
-<app-booking-summary [timeslot]="selectedSlot" (bookingConfirm)="onConfirmBooking()" [reservations]="reservationService.reservatrionList()"></app-booking-summary>
+<app-booking-summary [timeslot]="selectedSlot" (bookingConfirm)="onConfirmBooking()" [reservations]="reservationService.getReservationsByDate(selectedDate)"></app-booking-summary>  

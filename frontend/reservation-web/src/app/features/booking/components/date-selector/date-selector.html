@@ -1,1 +1,4 @@
-<p>date-selector works!</p>
+
+@for (date of availableDates(); track $index) {
+    <button (click)="selectDate(date)">{{ formateDate(date) }}</button>
+}
