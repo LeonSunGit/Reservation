@@ -2,13 +2,15 @@
     <h1>Book a Slot</h1>
     <p>Select a day and available time slot</p>
 
-    <app-date-selector [availableDates]="reservationService.getAvailableDate()"
-        (selectedDate)="onDateSelected($event)"></app-date-selector>
+    <div class="booking-page__content">
+        <app-date-selector [availableDates]="reservationService.getAvailableDate()" [selectedDate]="selectedDate()"
+            (dateSelected)="onDateSelected($event)"></app-date-selector>
 
-    <app-time-slot-grid (slotSelected)="onSlotSelected($event)"
-        [slotViewModel]="slotViewModels()"></app-time-slot-grid>
+        <app-time-slot-grid (slotSelected)="onSlotSelected($event)"
+            [slotViewModel]="slotViewModels()"></app-time-slot-grid>
+        <app-booking-summary [timeslot]="selectedSlot()" (bookingConfirm)="onConfirmBooking()"
+            [reservations]="filteredReservations()"></app-booking-summary>
+    </div>
 
-    <app-booking-summary [timeslot]="selectedSlot()" (bookingConfirm)="onConfirmBooking()"
-        [reservations]="filteredReservations()"></app-booking-summary>
 
 </div>

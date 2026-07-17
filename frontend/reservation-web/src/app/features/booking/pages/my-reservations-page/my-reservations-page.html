@@ -1,13 +1,15 @@
-@if (reservation.reservatrionList().length===0) {
-    <p>No Reservation</p>
-}
-@else{
-@for (slot of reservation.reservatrionList(); track slot) {
-  <div>
+<div class="page-container">
+  @if (reservation.reservatrionList().length===0) {
+  <p>No Reservation</p>
+  }
+  @else{
+  @for (slot of reservation.reservatrionList(); track slot) {
+  <div class="my-reservations-page__item">
     <span>{{slot.date}} {{ slot.startTime }} - {{ slot.endTime }}</span>
     <button (click)="reservation.cancelBooking(slot.id)">Cancel</button>
   </div>
-}
+  }
 
-}
+  }
 
+</div>

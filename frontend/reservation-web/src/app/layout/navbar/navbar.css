@@ -1,0 +1,9 @@
+.navbar{
+    display: flex;
+    justify-content:first baseline;
+    background-color: #4c92d8;
+}
+
+.navbar a{
+    width: 200px;
+}

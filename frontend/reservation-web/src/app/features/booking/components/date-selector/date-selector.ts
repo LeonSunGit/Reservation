@@ -2,6 +2,7 @@ import { Component,input,output } from '@angular/core';
 import { formatDateOnly } from '../../../../shared/utils/date.util';
 import { from } from 'rxjs';
 
+
 @Component({
   selector: 'app-date-selector',
   imports: [],
@@ -10,11 +11,13 @@ import { from } from 'rxjs';
 })
 export class DateSelector {
   availableDates=input<Date[]>([]);
-  selectedDate=output<Date>();
+  selectedDate=input<Date>(new Date());
+  dateSelected=output<Date>();
+  
 
   formateDate= formatDateOnly;
   selectDate(date:Date){
-    this.selectedDate.emit(date);
+    this.dateSelected.emit(date);
     
   }
 }

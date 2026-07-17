@@ -1,0 +1,8 @@
+.booking-summary{
+    display: flex;
+    justify-content: space-between;
+}
+
+.booking-summary button {
+   width:200px;
+}

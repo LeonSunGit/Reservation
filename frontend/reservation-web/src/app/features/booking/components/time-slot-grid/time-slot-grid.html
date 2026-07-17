@@ -1,7 +1,7 @@
 <div class="time-slot-grid">
 
 @for (slotItem of displaySlots(); track slotItem) {
-  <div  >
+  <div class="time-slot-grid__item">
     <button
       [class]="'time-slot time-slot--' + slotItem.state"
       [disabled]="slotItem.state == 'booked-by-other'||slotItem.state == 'booked-by-me'"

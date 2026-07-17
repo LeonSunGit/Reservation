@@ -21,6 +21,7 @@ import { BookingSlotViewModel } from '../../models/booking-slot.viewmodel';
 export class BookingPage {
   constructor(public reservationService: ReservationService) {
     this.availableDates = this.reservationService.getAvailableDate(3);
+    this.selectedDate.set(this.availableDates[0]);
   }
 
 

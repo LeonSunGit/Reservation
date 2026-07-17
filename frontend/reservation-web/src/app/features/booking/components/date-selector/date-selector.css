@@ -1,0 +1,17 @@
+.date-selector {
+    display: flex;
+    direction: row;
+    justify-content: space-between;
+
+}
+
+.date-button {
+    width: 100%;
+
+}
+
+.date-button--selected {
+    background-color: #007bff;
+    color: white;
+
+}

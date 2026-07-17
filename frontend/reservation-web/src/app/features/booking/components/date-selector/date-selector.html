@@ -1,4 +1,5 @@
-
+<div class="date-selector"> 
 @for (date of availableDates(); track $index) {
-    <button (click)="selectDate(date)">{{ formateDate(date) }}</button>
+    <button class="date-button {{ formateDate(selectedDate()) === formateDate(date) ? 'date-button--selected' : '' }}" (click)="selectDate(date)">{{ formateDate(date) }}</button>
 }
+</div>

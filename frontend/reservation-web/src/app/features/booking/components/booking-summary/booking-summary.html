@@ -1,14 +1,9 @@
-@if (timeslot()) {
+<div class="booking-summary">
+  @if (timeslot()) {
   <p>Selected Time Slot:{{ timeslot()!.startTime }} - {{ timeslot()!.endTime }}</p>
   <button (click)="confirmBooking()">Confirm Booking</button>
-} @else {
+  } @else {
   <p>No time slot selected</p>
   <button disabled>Confirm Booking</button>
-}
-
-<p>Booked Slots:</p>
-<div>
-  @for (slot of reservations(); track slot) {
-    <p>{{ slot.startTime }} - {{ slot.endTime }}</p>
   }
 </div>
