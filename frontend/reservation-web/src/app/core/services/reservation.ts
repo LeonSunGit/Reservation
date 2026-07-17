@@ -38,6 +38,10 @@ export class ReservationService {
         console.log('getReservationsByDate', date, formatDateOnly(date));
         return this.reservatrionList().filter(p=>p.date===formatDateOnly(date));
     }
+    getReservationsByDateAndGroup(date:Date,group:string):ReservationModel[]{
+        console.log('getReservationsByDate', date, formatDateOnly(date));
+        return this.reservatrionList().filter(p=>p.date===formatDateOnly(date) && p.accountGroup===group);
+    }    
 
     getAvailableDate(daysAhead = 3): Date[] {
         const today = new Date();

@@ -1,12 +1,15 @@
-@for (slot of timeSlots; track slot) {
-  <div class="time-slot-grid">
+<div class="time-slot-grid">
+
+@for (slotItem of displaySlots(); track slotItem) {
+  <div  >
     <button
-      class="timeSlot"
-      [disabled]="isBooked(slot)"
-      (click)="selectSlot(slot)"
-      [class.booked]="isBooked(slot)"
+      [class]="'time-slot time-slot--' + slotItem.state"
+      [disabled]="slotItem.state == 'booked-by-other'||slotItem.state == 'booked-by-me'"
+      (click)="selectSlot(slotItem.slot)"
+
     >
-      {{ slot.startTime }} - {{ slot.endTime }}
+      {{ slotItem.slot.startTime }} - {{ slotItem.slot.endTime }}
     </button>
   </div>
 }
+</div>

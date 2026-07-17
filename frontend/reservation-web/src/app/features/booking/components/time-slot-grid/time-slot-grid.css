@@ -1,5 +1,38 @@
 .time-slot-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+}
+
+.time-slot {
+  width: 100%;
+  padding: 10px 12px;
+  min-height: 42px;
+  border-radius: 6px;
+}
+
+.time-slot--selected {
+  border-color: #080718;
+  background: #080718;
+  color: #ffffff;
+}
+
+.time-slot--booked-by-me {
+  border-color: #c1bee9;
+  background: #c1bee9;
+  color: #080718;
+}
+
+.time-slot--booked-by-other {
+  border-color: #f70505;
+  background: #ccc;
+  color: #666;
+}
+
+.time-slot:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.time-slot:disabled:hover {
+  transform: none;
 }
